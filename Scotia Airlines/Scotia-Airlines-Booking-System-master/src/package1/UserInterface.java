@@ -80,7 +80,7 @@ public class UserInterface
 		
 		
 		
-		//need atleast one panel on a window, default will be full size of frame
+		//need at least one panel on a window, default will be full size of frame
 		JPanel myPanel = new JPanel();
 		
 		myPanel.setLayout(new GridLayout(6, 1));
@@ -256,7 +256,7 @@ public class UserInterface
 				// sets frame in middle of the screen when null value is set
 				myFrame.setLocationRelativeTo(null);
 
-				// need atleast one panel on a window, default will be full size of
+				// need at least one panel on a window, default will be full size of
 				// frame
 				JPanel myPanel = new JPanel();
 			
@@ -299,7 +299,7 @@ public class UserInterface
 				JButton clearBtn = new JButton("Clear");
 				JButton backBtn = new JButton("Back To Admin Options");
 				
-				
+				// Adding above elements to memu panel 
 				c.add(title);
 				c1.add(flightID);
 				c1.add(txtFlightID);
@@ -400,6 +400,7 @@ public class UserInterface
 		
 		myPanel.add(title);
 		
+		// Generate button for each flight in Flights hashmap
 		for(Map.Entry<String, Flight> currentFlight: myAirline.getFlights().entrySet())
 		{
 			
@@ -463,7 +464,7 @@ public class UserInterface
 		
 	}
 	
-	
+	// Used to change flight status 
 	public void DisplayChangeStatusMenu(String FlightInfo)
 	{
 		//create frame object and size
@@ -482,6 +483,7 @@ public class UserInterface
 				
 				JLabel title = new JLabel("Change Flight Status", SwingConstants.CENTER);
 				
+				// Button for each status
 				JButton btnSeatsAvailable = new JButton("Seats Available");
 				JButton btnCheckingIn =  new JButton("Flight Checking In");
 				JButton btnBoarding = new JButton("Flight Boarding");
@@ -526,7 +528,7 @@ public class UserInterface
 					@Override
 					public void actionPerformed(ActionEvent e) {
 
-						
+						// Variables used to alter status of a flight
 						boolean boarding = chosenFlight.isBoarding();
 						boolean closed = chosenFlight.isClosed();
 						boolean checkingIn = chosenFlight.isCheckingIn();
